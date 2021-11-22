@@ -14,5 +14,7 @@ public class Controller {
 		Controller controller = new Controller();
 		controller.myMain();
 		System.out.println("running");
+		System.out.println("running");
+
 	}
 }
