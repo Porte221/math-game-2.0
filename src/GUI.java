@@ -1,5 +1,7 @@
 
-public class GUI {
+
+public class GUI extends Problem {
+	
 	GradeLevel Query_the_grade_level() {
 		GradeLevel retVal = null;
 		
@@ -7,12 +9,14 @@ public class GUI {
 		return retVal;
 	}
 	
-	void displayResponseToStudnet() {
+	public void displayResponseToStudnet() {
 		
 	}
 	
-	void displayProblem(Problem problem ) {
+	public void displayProblem(Problem problem) {
 		
+		System.out.println("Solve this addition problem");
+		problem.addition();
 	}
 	
 }
