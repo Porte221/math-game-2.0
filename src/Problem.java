@@ -5,8 +5,15 @@ public class Problem {
 
 	//Create new random number generator
 	private final static Random rand = new Random();
-	private int num1, num2;
+	private int num1, num2, answer;
+	private String mathtype;
 	
+
+	public void setAnswer(int answer) {
+		this.answer = answer;
+	}
+
+
 
 	public int getNum1() {
 		return num1;
@@ -39,21 +46,54 @@ public class Problem {
 
 
 	//Constructor for the problems
-	public Problem() {
+	public Problem(String mathtype) {
+		this.mathtype = mathtype;
 
 	}
 
 
+	public String getProblem() {
+		
+		switch(mathtype) {
+		case "addition": return addition();
+		
+		case "multiplication": return multiplication();
+		
+		default: 
+			return addition();
+		}
+	}
 	
-	public int addition() {
+	public String addition() {
 		
 		int num1 = (1 + rand.nextInt(9));
 		int num2 = (1 + rand.nextInt(9));
 		
-		System.out.println("What is: " + num1+ " + " +num2);
 		
-		int sum = num1 + num2;
+		String question = "What is: " + num1+ " + " +num2;
 		
-		return sum;
+		answer = num1 + num2;
+		
+		
+		return question ;
+	}
+	public String multiplication() {
+		
+		int num1 = (1 + rand.nextInt(9));
+		int num2 = (1 + rand.nextInt(9));
+		
+		String question = "What is: " + num1+ " * " +num2;
+		
+		answer = num1 * num2;
+		
+		
+		return question;
+	}
+
+
+
+	public int getAnswer() {
+		
+		return answer;
 	}
 }

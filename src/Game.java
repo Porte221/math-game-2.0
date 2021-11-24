@@ -1,27 +1,28 @@
 import java.util.Random;
 
-public class Game extends Problem{
+public class Game {
 	
 	//Create new random number generator
 	private final Random rand = new Random();
 	
 	//Create a controller object
 	private int answer;
-	private Problem problem;
 	
 
-
+		
 	
 	
-    public int addition(int guess) {
+    public int problem(int guess, Problem problem) {
     	
     
+    	int answer = problem.getAnswer();
     	
     	
     	if( guess != answer) {
     		System.out.println("incorrect");
     	}
     		
+    	System.out.println("correct");
     	return guess;
 	
 
