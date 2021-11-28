@@ -57,8 +57,13 @@ public class Problem {
 		switch(mathtype) {
 		case "addition": return addition();
 		
+		case "subtraction": return subtraction();
+		
 		case "multiplication": return multiplication();
 		
+		case "division": return division();
+		
+		case "random": return random();
 		default: 
 			return addition();
 		}
@@ -77,6 +82,30 @@ public class Problem {
 		
 		return question ;
 	}
+	
+	public String subtraction() {
+		
+		int num1 = (1 + rand.nextInt(9));
+		int num2 = (1 + rand.nextInt(9));
+		
+		
+		if (num2 > num1) {
+			
+			int temp = num1;
+			num1 = num2;
+			num2 = temp;
+			
+			answer = num1 - num2;
+		}
+		
+		String question = "What is: " + num1+ " - " +num2;
+	
+		
+		answer = num1 - num2;
+		
+		return question ;
+	}
+	
 	public String multiplication() {
 		
 		int num1 = (1 + rand.nextInt(9));
@@ -88,6 +117,45 @@ public class Problem {
 		
 		
 		return question;
+	}
+	
+	public String division() {
+		
+		double num1 = (1 + rand.nextInt(9));
+		double num2 = (1 + rand.nextInt(9));
+		
+		
+		if (num2 > num1) {
+					
+					double temp = num1;
+					num1 = num2;
+					num2 = temp;
+					
+					answer = (int) (num1 / num2);
+				}
+		
+		String question = "What is: " + num1+ " / " +num2;
+		
+	
+		answer = (int) (num1 / num2);
+		
+		
+		return question;
+	}
+	
+	public String random() {
+		int value = ( 1 + rand.nextInt(4));
+		
+		switch(value) {
+		
+		case 1: return addition();
+		case 2: return subtraction();
+		case 3: return multiplication();
+		case 4: return division();
+		
+		default: return addition();
+		}
+
 	}
 
 
