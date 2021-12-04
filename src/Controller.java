@@ -18,9 +18,12 @@ public class Controller {
 		
 		System.out.println("What type of math problem would you like to solve?");
 		System.out.println("Enter addition, subtraction, multiplication, division or random:");
+		//Insert exception handling
 		String Mathtype = input.next();
 		
 		System.out.println("How many questions would you like?");
+		
+		//Insert exception handling
 		double numberOfQuestions = input.nextDouble();
 		
 		game.setNumberOfQuestions(numberOfQuestions);
@@ -36,6 +39,7 @@ public class Controller {
 			
 			System.out.println("Enter your answer?");
 			
+			//Insert exception handling
 		    int response = input.nextInt();
 
 		    game.problem(response, problem);
